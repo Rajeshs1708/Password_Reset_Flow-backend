@@ -1,11 +1,13 @@
-const mongoose = require('mongoose');
-mongoose.set('strictQuery', true);
+const mongoose = require('mongoose')
+mongoose.set('strictQuery', true)
 
 exports.db = () => {
-    mongoose.connect(process.env.MONGO_URI)
+  mongoose
+    .connect(process.env.MONGO_URI)
     .then(() => {
-        console.log('MongoDB Connection established...')
-    }).catch((err) => {
-        console.log(err);
+      console.log('MongoDB Connection established...')
+    })
+    .catch(err => {
+      console.log(err)
     })
 }

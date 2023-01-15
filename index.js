@@ -6,6 +6,7 @@ const { db } = require('./connection')
 const authRoutes = require('./Routes/auth')
 const quoteRoutes = require('./Routes/quotes')
 const { requireSignIn, isAuth } = require('./Utils/authorization')
+
 //Middlewares
 db()
 app.use(cors())
@@ -16,7 +17,7 @@ app.get('/', (req, res) => {
 
 //Custom Middlewares
 app.use('/api', authRoutes)
-app.use('/api', requireSignIn, isAuth, quoteRoutes);
+app.use('/api', requireSignIn, isAuth, quoteRoutes)
 
 const PORT = process.env.PORT || 9000
 app.listen(PORT, () => {

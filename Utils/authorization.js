@@ -1,4 +1,4 @@
-const { expressjwt:jwt } = require("express-jwt");
+const { expressjwt: jwt } = require('express-jwt')
 
 exports.requireSignIn = jwt({
   secret: process.env.SECRET_KEY,
@@ -14,5 +14,5 @@ exports.isAuth = (req, res, next) => {
       err: 'Access denied'
     })
   }
-  next();
+  next()
 }
