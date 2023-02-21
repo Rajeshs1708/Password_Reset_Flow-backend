@@ -54,7 +54,7 @@ router.post('/signin', async (req, res) => {
         res.cookie('entryToken', token, {
           expires: new Date(Date.now() + 25892000000)
         })
-        const { _id, name, email } = existingUser
+        const { _id, name, email, role } = existingUser
         return res
           .status(200)
           .send({ token: token, user: { _id, email, name, role } })
