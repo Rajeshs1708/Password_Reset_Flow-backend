@@ -57,7 +57,7 @@ router.post('/signin', async (req, res) => {
         const { _id, name, email } = existingUser
         return res
           .status(200)
-          .send({ token: token, user: { _id, email, name } })
+          .send({ token: token, user: { _id, email, name, role } })
       }
       return res.status(400).send({
         message: 'Email/Password are not matching.'
